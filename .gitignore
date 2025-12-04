@@ -1,0 +1,10 @@
+.idea/
+.vscode/
+*.iml
+.DS_Store
+**/target/
+.env
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log

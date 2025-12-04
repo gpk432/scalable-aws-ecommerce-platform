@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: commerce-api
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/commerce}
+    username: ${DB_USERNAME:commerce}
+    password: ${DB_PASSWORD:commerce}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
