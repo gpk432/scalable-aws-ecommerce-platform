@@ -6,6 +6,6 @@ import java.util.UUID;
 @RestController @RequestMapping("/api/orders")
 public class OrderController {
   private final OrderService service; public OrderController(OrderService service){this.service=service;}
-  @PostMapping @ResponseStatus(HttpStatus.CREATED) public PurchaseOrder create(@Valid @RequestBody CreateOrderRequest request){return service.create(request);}
+  @PostMapping @ResponseStatus(HttpStatus.CREATED) public PurchaseOrder create(@RequestHeader("Idempotency-Key") String key, @Valid @RequestBody CreateOrderRequest request){return service.create(key, request);}
   @GetMapping("/{id}") public PurchaseOrder get(@PathVariable UUID id){return service.get(id);}
 }
